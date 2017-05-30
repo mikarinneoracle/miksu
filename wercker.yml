@@ -5,6 +5,12 @@ box:
 
 build:
   steps:
+    - script:
+        name: cat
+        code: |
+              cat index.html
+deploy:
+  steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
