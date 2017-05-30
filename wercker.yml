@@ -10,4 +10,6 @@ build:
         password: $DOCKER_PASSWORD
         tag: $WERCKER_MAIN_PIPELINE_STARTED
         repository: $DOCKER_USERNAME/miksu
+        ports: "5000, 8080"
+        cmd: node server.js
         registry: https://registry.hub.docker.com
