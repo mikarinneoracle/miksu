@@ -9,6 +9,7 @@ build:
         name: cat
         code: |
               cat index.html
+    - npm-install
 deploy:
   steps:
     - internal/docker-push:
