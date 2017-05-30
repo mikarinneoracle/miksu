@@ -10,7 +10,6 @@ build:
         code: |
               cat index.html
     - npm-install
-    - internal/store-container
 deploy:
   steps:
     - internal/docker-push:
