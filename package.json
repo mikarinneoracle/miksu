@@ -1,6 +1,6 @@
 {
   "name": "miksu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "miksun testiohjelma",
   "main": "server.js",
   "scripts": {

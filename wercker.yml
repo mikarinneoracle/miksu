@@ -6,10 +6,6 @@ box:
 build:
   steps:
     - script:
-        name: cat
-        code: |
-              cat index.html
-    - script:
         name: npm
         code: |
               npm install
@@ -18,7 +14,7 @@ deploy:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        tag: 1.0
+        tag: $WERCKER_MAIN_PIPELINE_STARTED
         repository: $DOCKER_USERNAME/miksu
         ports: "3000"
         cmd: npm start
