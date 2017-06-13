@@ -14,5 +14,6 @@ deploy:
         tag: $WERCKER_MAIN_PIPELINE_STARTED
         repository: $DOCKER_USERNAME/miksu
         ports: "3000"
+        working-dir: /usr/src/app
         cmd: npm start
         registry: https://registry.hub.docker.com
