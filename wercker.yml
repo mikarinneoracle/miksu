@@ -6,6 +6,10 @@ box:
 build:
   steps:
     - npm-install
+    script:
+    name: exit-test
+    code: |
+          exit
 deploy:
   steps:
     - internal/docker-push:
