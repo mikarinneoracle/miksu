@@ -9,4 +9,4 @@ build:
     - script:
         name: exit-test
         code: |
-              echo 'moi'
+              echo "moi"
