@@ -6,17 +6,7 @@ box:
 build:
   steps:
     - npm-install
-    script:
-    name: exit-test
-    code: |
-          exit
-deploy:
-  steps:
-    - internal/docker-push:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
-        tag: $WERCKER_MAIN_PIPELINE_STARTED
-        repository: $DOCKER_USERNAME/miksu
-        ports: "3000"
-        cmd: npm start
-        registry: https://registry.hub.docker.com
+    - script:
+        name: exit-test
+        code: |
+              exit
