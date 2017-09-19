@@ -16,3 +16,5 @@ deploy:
         ports: "3000"
         cmd: npm start
         registry: https://registry.hub.docker.com
+    - script: |
+              curl -d "token=rdljntlc" -X POST https://140.86.0.102/api/v2/deployments/Miksu-20170919-151940/webhook/restart
