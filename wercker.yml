@@ -19,4 +19,4 @@ deploy:
     - script: 
         name: redeploy-OCCS
         code: |
-              curl -k -H "Content-Type: application/json" -X POST https://140.86.0.102/api/v2/deployments/Miksu-20170919-151940/webhook/restartcurl -k -X POST https://140.86.0.102/api/v2/deployments/Miksu-20170919-151940/webhook/restart?token=rdljntlc
+              curl -k -H "Content-Type: application/json" -X POST https://140.86.0.102/api/v2/deployments/Miksu-20170919-151940/webhook/restartcurl -k -X POST $OCCS_WEBHOOK
