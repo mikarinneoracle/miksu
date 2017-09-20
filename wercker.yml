@@ -20,4 +20,4 @@ deploy:
         name: redeploy-OCCS
         code: |
               #curl -k -H "Content-Type: application/json" -X POST $OCCS_WEBHOOK // OCCS WEBHOOK
-              curl -v -X POST -F 'token=$OCCS_TOKEN' -F 'host=$OCCS_HOST' -F 'deployment=$OCCS_DEPLOYMENT' $OCCS_ROLLING_UPDATE_HOST
+              curl -v -X POST -F token=$OCCS_TOKEN -F host=$OCCS_HOST -F deployment=$OCCS_DEPLOYMENT $OCCS_ROLLING_UPDATE_HOST
