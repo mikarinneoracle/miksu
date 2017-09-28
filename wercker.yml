@@ -8,13 +8,6 @@ build:
     - npm-install
 deploy:
   steps:
-    - script:
-      name: ssh-ls
-      code: |
-            printenv FOO_PRIVATE > foo
-            chmod 0600 foo
-            cat foo
-            ssh -i foo -l opc -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
