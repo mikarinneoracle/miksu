@@ -9,7 +9,7 @@ build:
 deploy:
   steps:
     - add-ssh-key:
-      keyname: FOO
+      keyname: OCCS
     - add-to-known_hosts:
       hostname: $HOST
     - script:
