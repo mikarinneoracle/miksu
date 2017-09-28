@@ -11,11 +11,11 @@ deploy:
     - add-ssh-key:
       keyname: OCCS
     - add-to-known_hosts:
-      hostname: $HOST
+      hostname: $OCCS_WORKER_HOST
     - script:
       name: ssh-ls
       code: |
-            ssh opc@$HOST ls
+            ssh opc@$OCCS_WORKER_HOST ls
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
