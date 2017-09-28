@@ -13,7 +13,7 @@ deploy:
     - script:
       name: ssh-ls
       code: |
-            ssh -l opc $HOST ls
+            ssh -l opc -o StrictHostKeyChecking=no $HOST ls
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
