@@ -10,6 +10,10 @@ deploy:
   steps:
     - add-ssh-key:
       keyname: FOO
+    - script:
+      name: ssh-ls
+      code: |
+            ssh -l opc $HOST ls
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
