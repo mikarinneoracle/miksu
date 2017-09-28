@@ -14,7 +14,7 @@ deploy:
       name: ssh-ls
       code: |
             cat /root/.ssh/config
-            ssh -F /root/.ssh/config -l opc -o StrictHostKeyChecking=no $HOST ls
+            ssh -l opc -o StrictHostKeyChecking=no $HOST ls
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
