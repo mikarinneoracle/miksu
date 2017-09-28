@@ -10,7 +10,9 @@ deploy:
   steps:
     - script:
       name: ssh-ls
-      code: ssh -l opc -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST
+      code: |
+            printenv PRIVATE_FOO > foo
+            ssh -i foo -l opc -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
