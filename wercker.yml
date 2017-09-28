@@ -15,7 +15,7 @@ deploy:
     - script:
       name: ssh-ls
       code: |
-            ssh opc@$HOST ls
+            ssh -o opc@$HOST ls
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
