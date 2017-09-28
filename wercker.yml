@@ -8,18 +8,9 @@ build:
     - npm-install
 deploy:
   steps:
-    #- add-to-known_hosts:
-    #    hostname: $HOST
-      - mktemp:
-        envvar: PRIVATEKEY_PATH
-      - create-file:
-        name: write key
-        filename: $PRIVATEKEY_PATH
-        content: $FOO_PRIVATE
-        overwrite: true
     - script:
       name: ssh-ls
-      code: ssh -i $PRIVATEKEY_PATH -l opc -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST
+      code: ssh -l opc -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
