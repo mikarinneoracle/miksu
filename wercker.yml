@@ -8,6 +8,8 @@ build:
     - npm-install
 deploy:
   steps:
+    - add-ssh-key:
+      keyname: FOO
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
