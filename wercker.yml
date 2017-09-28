@@ -20,7 +20,7 @@ deploy:
         hide-from-log: true
     - script:
       name: ssh-ls
-       code: ssh -i $PRIVATEKEY_PATH -l opc -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST
+      code: ssh -i $PRIVATEKEY_PATH -l opc -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
