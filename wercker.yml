@@ -8,8 +8,8 @@ build:
     - npm-install
 deploy:
   steps:
-    - add-to-known_hosts:
-        hostname: $HOST
+    #- add-to-known_hosts:
+    #    hostname: $HOST
       - mktemp:
         envvar: PRIVATEKEY_PATH
       - create-file:
