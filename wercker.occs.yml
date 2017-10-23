@@ -1,0 +1,31 @@
+box:
+    id: $DOCKER_USERNAME/miksu
+    tag: latest
+    registry: https://registry.hub.docker.com
+
+build:
+  steps:
+    - npm-install
+deploy:
+  steps:
+    - add-ssh-key:
+      keyname: OCCS
+    - add-to-known_hosts:
+      hostname: $OCCS_WORKER_HOST
+    - script:
+      name: ssh-date-test
+      code: |
+            ssh opc@$OCCS_WORKER_HOST date
+    - internal/docker-push:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        tag: latest
+        repository: $DOCKER_USERNAME/miksu
+        ports: "3000"
+        cmd: npm start
+        registry: https://registry.hub.docker.com
+    - script:
+        name: redeploy-OCCS
+        code: |
+              #curl -k -H "Content-Type: application/json" -X POST $OCCS_WEBHOOK // OCCS WEBHOOK
+              curl -v -X POST -F token=$OCCS_TOKEN -F host=$OCCS_HOST -F deployment=$OCCS_DEPLOYMENT -F filter=$OCCS_FILTER $OCCS_ROLLING_UPDATE_HOST
