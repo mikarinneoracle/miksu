@@ -5,14 +5,12 @@ HOST: http://polls.apiblueprint.org/
 
 Hello
 
-## Hello friend [/hello]
+## Hello friend [/hello/{name}]
 
 ### Says Hello to a friend [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "response": "Hello friend!"
-            }
-        ]
+        {
+            "response": "Hello friend!"
+        }
