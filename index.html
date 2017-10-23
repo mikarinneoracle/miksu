@@ -1,5 +1,5 @@
 <html>
-<body bgcolor="yellow">
+<body bgcolor="orange">
     <h1>Hello friend!</h1>
 
     <div id='hello'>
@@ -28,7 +28,8 @@ function hello()
     }
     var request = new XMLHttpRequest();
 
-    request.open('GET', 'https://private-87c39-miksu.apiary-mock.com/hello/' + name);
+    request.open('GET', 'http://localhost:3000/hello/' + name);
+    //request.open('GET', 'https://private-87c39-miksu.apiary-mock.com/hello/' + name);
 
     request.onreadystatechange = function () {
       if (this.readyState === 4) {
