@@ -4,6 +4,7 @@ box:
     registry: https://registry.hub.docker.com
 
 build:
+    npm -v
 deploy:
   steps:
     - add-ssh-key:
