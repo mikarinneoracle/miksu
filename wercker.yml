@@ -4,14 +4,16 @@ box:
     registry: https://registry.hub.docker.com
 
 build:
-  steps:
-    - npm-install
 deploy:
   steps:
     - add-ssh-key:
       keyname: OPC
     - add-to-known_hosts:
       hostname: $HOST
+    - script:
+      name: redeploy
+      code: |
+            ssh opc@$HOST date
     - script:
       name: redeploy
       code: |
