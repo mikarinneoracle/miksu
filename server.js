@@ -12,15 +12,28 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get('/hello/:name', function(req, res) {
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.get('/hello/:name?', function(req, res) {
   var name = req.params.name;
-  res.send("Hello " + name);
+  if(!name)
+  {
+      name = 'friend';
+  }
+  return res.status(200).json( { 'response' : 'Hello ' + name + '!' });
 });
 
 app.post("/hello", function (req, res) {
     var name = req.body.name;
-    console.log("New user " + name);
-    res.send("Hello " + name);
+    if(!name)
+    {
+        name = 'friend';
+    }
+    return res.status(200).json( { 'response' : 'Hello ' + name + '!' });
 });
 
 app.listen(port, function() {
