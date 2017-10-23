@@ -13,14 +13,6 @@ deploy:
     - add-to-known_hosts:
       hostname: $HOST
     - script:
-      name: redeploy-cd
-      code: |
-            ssh opc@$HOST cd miksu
-    - script:
-      name: redeploy-ls
-      code: |
-            ssh opc@$HOST ls
-    - script:
       name: redeploy
       code: |
-            ssh opc@$HOST sh redeploy.sh
+            ssh opc@$HOST sh reload.sh
