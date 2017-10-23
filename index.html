@@ -28,8 +28,8 @@ function hello()
     }
     var request = new XMLHttpRequest();
 
-    //request.open('GET', 'http://localhost:3000/hello/' + name);
-    request.open('GET', 'https://private-87c39-miksu.apiary-mock.com/hello/' + name);
+    request.open('GET', window.location.origin + '/hello/' + name);
+    //request.open('GET', 'https://private-87c39-miksu.apiary-mock.com/hello/' + name);
 
     request.onreadystatechange = function () {
       if (this.readyState === 4) {
