@@ -15,4 +15,4 @@ deploy:
     - script:
       name: redeploy
       code: |
-            ssh -v -A $PRIVATEKEY_PATH opc@$HOST sh reload.sh
+            ssh -v -A opc@$HOST git clone git@github.com:mikarinneoracle/miksu.git
