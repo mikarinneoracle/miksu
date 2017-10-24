@@ -12,15 +12,7 @@ deploy:
       keyname: OPC
     - add-to-known_hosts:
       hostname: $HOST
-    - mktemp:
-      envvar: PRIVATEKEY_PATH
-   - create-file:
-      name: write key
-      filename: $PRIVATEKEY_PATH
-      content: $OPC_PRIVATE
-      overwrite: true
-      hide-from-log: true
     - script:
       name: redeploy
       code: |
-            ssh -i $PRIVATEKEY_PATH opc@$HOST sh reload.sh
+            ssh -v -A $PRIVATEKEY_PATH opc@$HOST sh reload.sh
