@@ -19,7 +19,8 @@ deploy:
     - script:
       name: redeploy-OCCS
       code: |
-            curl -k -H "Content-Type: application/json" -X POST $OCCS_WEBHOOK
+            echo 'occs webhook disabled'
+            #curl -k -H "Content-Type: application/json" -X POST $OCCS_WEBHOOK
     - add-ssh-key:
       keyname: OPC
     - add-to-known_hosts:
