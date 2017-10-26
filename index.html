@@ -28,7 +28,7 @@ function hello()
     var request = new XMLHttpRequest();
 
     //request.open('GET', window.location.origin + '/hello/' + name);
-    request.open('GET', 'https://private-87c39-miksu.apiary-mock.com/hello/' + name);
+    request.open('GET', 'https://private-87c39-miksu.apiary-proxy.com/hello/' + name);
 
     request.onreadystatechange = function () {
       if (this.readyState === 4) {
