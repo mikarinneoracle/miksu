@@ -8,19 +8,19 @@ build:
     - npm-install
 deploy:
   steps:
-    - internal/docker-push:
-      username: $DOCKER_USERNAME
-      password: $DOCKER_PASSWORD
-      tag: latest
-      repository: $DOCKER_USERNAME/miksu
-      ports: "3000"
-      cmd: npm start
-      registry: https://registry.hub.docker.com
-    - script:
-      name: redeploy-OCCS
-      code: |
-            echo 'occs webhook enabled'
-            curl -k -H "Content-Type: application/json" -X POST $OCCS_WEBHOOK
+    #- internal/docker-push:
+    #  username: $DOCKER_USERNAME
+    #  password: $DOCKER_PASSWORD
+    #  tag: latest
+    #  repository: $DOCKER_USERNAME/miksu
+    #  ports: "3000"
+    #  cmd: npm start
+    #  registry: https://registry.hub.docker.com
+    #- script:
+    #  name: redeploy-OCCS
+    #  code: |
+    #        echo 'occs webhook enabled'
+    #        curl -k -H "Content-Type: application/json" -X POST $OCCS_WEBHOOK
     - add-ssh-key:
       keyname: OPC
     - add-to-known_hosts:
