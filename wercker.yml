@@ -5,7 +5,7 @@ box:
 
 build:
   steps:
-    - npm-install
+    #- npm-install
 deploy:
   steps:
     #- internal/docker-push:
