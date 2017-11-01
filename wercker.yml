@@ -28,4 +28,4 @@ deploy:
     - script:
       name: redeploy
       code: |
-            ssh -v opc@$HOST sh reload.sh
+            ssh opc@$HOST sh reload.sh
