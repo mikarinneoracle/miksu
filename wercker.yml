@@ -16,11 +16,11 @@ deploy:
     #  ports: "3000"
     #  cmd: npm start
     #  registry: https://registry.hub.docker.com
-    - script:
-      name: redeploy-OCCS
-      code: |
-             echo 'OCCS rolling update'
-             curl -v -X POST -F token=$OCCS_TOKEN -F host=$OCCS_HOST -F deployment=$OCCS_DEPLOYMENT -F filter=$OCCS_FILTER $OCCS_ROLLING_UPDATE_HOST
+    # - script:
+    #  name: redeploy-OCCS
+    #  code: |
+    #         echo 'OCCS rolling update'
+    #         curl -v -X POST -F token=$OCCS_TOKEN -F host=$OCCS_HOST -F deployment=$OCCS_DEPLOYMENT -F filter=$OCCS_FILTER $OCCS_ROLLING_UPDATE_HOST
     #        echo 'occs webhook enabled'
     #        curl -k -H "Content-Type: application/json" -X POST $OCCS_WEBHOOK
     - add-ssh-key:
