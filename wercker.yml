@@ -1,8 +1,8 @@
 box:
-    id: node
-    tag: 6.10
-    #id: $DOCKER_USERNAME/miksu
-    #tag: 1.0
+    #id: node
+    #tag: 6.10
+    id: $DOCKER_USERNAME/miksu
+    tag: 1.0
     registry: https://registry.hub.docker.com
 
 build:
