@@ -1,4 +1,4 @@
 #/bin/sh
 
 cd miksu
-git pull -v origin master
+git pull origin master
