@@ -1,6 +1,6 @@
 <html>
 <title>Node.js DevOps demo Oracle Cloud + Bitnami</title>
-<body bgcolor="green">
+<body bgcolor="blue">
     <h1>Welcome to my site!</h1>
 
     <div id='hello'>
@@ -27,8 +27,8 @@ function hello()
     }
     var request = new XMLHttpRequest();
 
-    //request.open('GET', window.location.origin + '/hello/' + name);
-    request.open('GET', 'https://private-87c39-miksu.apiary-mock.com/hello/' + name);
+    request.open('GET', window.location.origin + '/hello/' + name);
+    //request.open('GET', 'https://private-87c39-miksu.apiary-mock.com/hello/' + name);
 
     request.onreadystatechange = function () {
       if (this.readyState === 4) {
